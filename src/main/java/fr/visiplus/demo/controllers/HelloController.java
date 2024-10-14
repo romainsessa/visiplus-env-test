@@ -18,5 +18,11 @@ public class HelloController {
 	public String getHello() {
 		return helloService.cleanValue("Hello ");
 	}
+	
+	@GetMapping("/first")
+	public String getFirst() {
+		String value = helloService.getFirstElement();
+		return helloService.cleanValue(value);
+	}
 
 }
