@@ -20,3 +20,8 @@ jobs:
         cache: maven
     - name: Tests with Maven
       run: mvn -B test --file pom.xml
+    - name: Upload Jacoco Site 
+      uses: actions/upload-artifact@v4 # GitHub Action that allow to upload on the pipeline result a file or a directory
+      with:
+        name: jacoco-report
+        path: ${{ github.workspace }}/target/site/jacoco
